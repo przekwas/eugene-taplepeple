@@ -21,11 +21,11 @@ const Ghost = () => {
 				accepted the free food or drinks offered by the venues. His sole payment was this
 				new life, and the magical power of his unique music. The art of it all was{' '}
 				<i>everything</i> to him. And so he chases the next high. Looking to use his musical
-				magic to do some good. So there's only one thing to do.
+				magic to do some good. So there&apos;s only one thing to do.
 			</p>
 			<p className="pb-4">
 				<b>
-					It's was time to <i>rock</i>
+					It&apos;s was time to <i>rock</i>
 				</b>{' '}
 				...
 			</p>
