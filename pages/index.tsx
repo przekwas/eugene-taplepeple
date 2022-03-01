@@ -2,8 +2,10 @@ import Image from 'next/image';
 import Head from 'next/head';
 import eugene from '../public/eugene.png';
 import ghost from '../public/ghost.png';
-import { useEffect, useState } from 'react';
+import Eugene from '../components/Eugene';
+import Ghost from '../components/Ghost';
 import { GiTopHat } from 'react-icons/gi';
+import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
@@ -24,6 +26,14 @@ const Home: NextPage = () => {
 		}
 	});
 
+	const handleClick = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+		setIsCool(!isCool);
+	};
+
 	return (
 		<>
 			<Head>
@@ -39,29 +49,10 @@ const Home: NextPage = () => {
 					<div className="md:w-2/3">
 						<Image src={isCool ? ghost : eugene} alt="picture of eugene" />
 					</div>
-					<div className="px-4">
-						<p>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora id
-							quas, voluptas, eum possimus cumque incidunt similique error, fugit
-							asperiores atque natus eos voluptatum dolorum exercitationem ratione
-							mollitia? Dolorem, quia!
-						</p>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus libero
-							nostrum ab quo optio debitis consequatur doloremque omnis, deserunt
-							mollitia ipsum inventore tempora necessitatibus, laborum aliquid
-							officiis soluta facere aspernatur.
-						</p>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ab
-							porro sed assumenda dicta a recusandae aliquid eum? Provident tempora
-							obcaecati voluptas enim id dicta consequuntur ullam ratione recusandae
-							deleniti.
-						</p>
-					</div>
+					<div className="px-4">{isCool ? <Ghost /> : <Eugene />}</div>
 					<div className="text-2xl">
 						<button
-							onClick={() => setIsCool(!isCool)}
+							onClick={handleClick}
 							className={`flex items-center justify-between mx-3 bg-transparent font-semibold py-2 px-4 border rounded ${
 								isCool
 									? 'text-sky-700 border-sky-500'
